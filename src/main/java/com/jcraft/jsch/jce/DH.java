@@ -35,10 +35,7 @@ import javax.crypto.KeyAgreement;
 import javax.crypto.spec.DHParameterSpec;
 import javax.crypto.spec.DHPublicKeySpec;
 import java.math.BigInteger;
-import java.security.KeyFactory;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.PublicKey;
+import java.security.*;
 
 public class DH implements com.jcraft.jsch.DH {
     BigInteger p;
@@ -60,7 +57,7 @@ public class DH implements com.jcraft.jsch.DH {
     public byte[] getE() throws Exception {
         if (e == null) {
             DHParameterSpec dhSkipParamSpec = new DHParameterSpec(p, g);
-            myKpairGen.initialize(dhSkipParamSpec);
+            try{myKpairGen.initialize(dhSkipParamSpec);} catch (InvalidAlgorithmParameterException e) {}
             KeyPair myKpair = myKpairGen.generateKeyPair();
             myKeyAgree.init(myKpair.getPrivate());
             e = ((javax.crypto.interfaces.DHPublicKey) (myKpair.getPublic())).getY();

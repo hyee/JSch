@@ -33,11 +33,11 @@ Features
 ========
 * JSch is in pure Java, but it depends on JavaTM Cryptography
   Extension (JCE).  JSch is know to work with:
-  o J2SE 1.4.0 or later (no additional libraries required).
-  o J2SE 1.3 and Sun's JCE reference implementation that can be
-    obtained at http://java.sun.com/products/jce/
-  o J2SE 1.2.2 and later and Bouncycastle's JCE implementation that
-    can be obtained at http://www.bouncycastle.org/
+* J2SE 1.4.0 or later (no additional libraries required).
+    * J2SE 1.3 and Sun's JCE reference implementation that can be
+      obtained at http://java.sun.com/products/jce/
+    * J2SE 1.2.2 and later and Bouncycastle's JCE implementation that
+      can be obtained at http://www.bouncycastle.org/
 * SSH2 protocol support.
 * Key exchange: diffie-hellman-group-exchange-sha1,
                 diffie-hellman-group1-sha1,
@@ -83,8 +83,10 @@ How To Try
 ==========
 This archive does not include java byte code, so please compile
 the source code by your self.
-  $ cd jsch-?.?.?/src
-  $ javac com/jcraft/jsch/*java com/jcraft/jsch/jce/*java com/jcraft/jzlib/*.java
+
+    $ cd jsch-?.?.?/src
+    $ javac com/jcraft/jsch/*java com/jcraft/jsch/jce/*java com/jcraft/jzlib/*.java
+  
 '/examples/' directory has included some samples to demonstrate what 
 JSch can do.  Please refer to '/examples/README' file.
 
